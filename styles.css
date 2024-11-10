@@ -3,6 +3,8 @@
 }
 body {
   display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0;
   height: 100vh;
 }
@@ -13,10 +15,14 @@ body {
   height: 400px;
   max-width: 400px;
   max-height: 400px;
-  margin: auto;
   display: flex;
   flex-wrap: wrap;
 }
 .gridBox {
   border: 1px solid;
+  transition: background-color 0.3s;
+}
+
+.gridBox.locked {
+  background-color: aqua;
 }
