@@ -56,5 +56,3 @@ gridChoiceBtn.addEventListener("click", () => {
 });
 
 createGrid(16);
-
-console.log(randomColor(0.1));
