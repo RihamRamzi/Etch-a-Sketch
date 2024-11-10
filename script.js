@@ -8,23 +8,28 @@ function createGrid(num1) {
 
   for (i = 1; i < grid + 1; i++) {
     const gridBox = document.createElement("div");
-
     gridBox.classList.add("gridBox");
+    let opacityValue = 0.1;
+
     gridBox.addEventListener("mousedown", () => {
       isDragging = true;
-      gridBox.style.background = "black";
+      opacityValue += 0.1;
+      gridBox.style.background = `rgba(0, 0, 0, ${opacityValue})`;
     });
+
     gridBox.addEventListener("mousemove", () => {
       if (isDragging) {
-        gridBox.style.background = "black";
+        opacityValue += 0.1;
+        gridBox.style.background = `rgba(0, 0, 0, ${opacityValue})`;
       }
     });
+
     gridBox.addEventListener("mouseup", () => {
       isDragging = false;
     });
+
     gridBox.style.width = gridBoxSize;
     gridBox.style.height = gridBoxSize;
-
     container.appendChild(gridBox);
   }
 }
