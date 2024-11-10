@@ -14,13 +14,13 @@ function createGrid(num1) {
     gridBox.addEventListener("mousedown", () => {
       isDragging = true;
       opacityValue += 0.1;
-      gridBox.style.background = `rgba(0, 0, 0, ${opacityValue})`;
+      gridBox.style.background = randomColor(opacityValue);
     });
 
     gridBox.addEventListener("mousemove", () => {
       if (isDragging) {
         opacityValue += 0.1;
-        gridBox.style.background = `rgba(0, 0, 0, ${opacityValue})`;
+        gridBox.style.background = randomColor(opacityValue);
       }
     });
 
