@@ -44,8 +44,17 @@ function getGridSize() {
   }
 }
 
+function randomColor(opacity) {
+  const r = Math.floor(Math.random() * 256);
+  const g = Math.floor(Math.random() * 256);
+  const b = Math.floor(Math.random() * 256);
+  return `rgba(${r}, ${g}, ${b}, ${opacity})`;
+}
+
 gridChoiceBtn.addEventListener("click", () => {
   createGrid(getGridSize());
 });
 
 createGrid(16);
+
+console.log(randomColor(0.1));
