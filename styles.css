@@ -3,6 +3,7 @@
 }
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 0;
@@ -10,6 +11,7 @@ body {
 }
 
 .container {
+  margin-top: 50px;
   border: 1px solid;
   width: 400px;
   height: 400px;
@@ -21,8 +23,4 @@ body {
 .gridBox {
   border: 1px solid;
   transition: background-color 0.3s;
-}
-
-.gridBox.locked {
-  background-color: aqua;
 }

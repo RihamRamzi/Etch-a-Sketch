@@ -1,4 +1,5 @@
 const container = document.querySelector(".container");
+const gridChoiceBtn = document.querySelector(".btn");
 
 function createGrid(num1) {
   const grid = num1 * num1;
@@ -11,11 +12,11 @@ function createGrid(num1) {
     gridBox.classList.add("gridBox");
     gridBox.addEventListener("mousedown", () => {
       isDragging = true;
-      gridBox.classList.add("locked");
+      gridBox.style.background = "black";
     });
     gridBox.addEventListener("mousemove", () => {
       if (isDragging) {
-        gridBox.classList.add("locked");
+        gridBox.style.background = "black";
       }
     });
     gridBox.addEventListener("mouseup", () => {
@@ -27,5 +28,19 @@ function createGrid(num1) {
     container.appendChild(gridBox);
   }
 }
+
+function getGridSize() {
+  const gridSize = prompt(`choose grid size between 1-100 `);
+  if (gridSize > 0 && gridSize <= 100) {
+    container.textContent = "";
+    return gridSize;
+  } else {
+    alert(`Please choose between 1-100`);
+  }
+}
+
+gridChoiceBtn.addEventListener("click", () => {
+  createGrid(getGridSize());
+});
 
 createGrid(16);
