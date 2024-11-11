@@ -17,7 +17,7 @@ function createGrid(num1) {
       gridBox.style.background = randomColor(opacityValue);
     });
 
-    gridBox.addEventListener("mousemove", () => {
+    gridBox.addEventListener("mouseover", () => {
       if (isDragging) {
         opacityValue += 0.1;
         gridBox.style.background = randomColor(opacityValue);
